@@ -1,5 +1,11 @@
 import type { SaleData } from '$lib/types/sale';
 
+export function getAbsoluteTime(isoDateString: string, offsetHours?: number): Date {
+	const unixtime = isoToUnixTime(isoDateString);
+	const offset = offsetHours || 9;
+	return new Date(unixtime + (new Date().getTimezoneOffset() + offset * 60) * 60 * 1000);
+}
+
 export function convertUnixTimestampToLocalTime(unixTimestamp: number): string {
 	const date = new Date(unixTimestamp * 1000);
 	const hours = date.getHours();
@@ -64,7 +70,17 @@ type NewObjects = {
 	createdAt: string; // 2023/04/30 18:44:58
 };
 
-export function transformData(data: any, offsetHours?: number) {
+export function isoToUnixTime(isoDateString: string): number {
+	const date = new Date(isoDateString);
+	return Math.floor(date.getTime());
+}
+
+export function unixTimeToIso(unixTimestamp: number): string {
+	const date = new Date(unixTimestamp);
+	return date.toISOString();
+}
+
+export function transformData(data: any) {
 	const newObjects: NewObjects[] = data.contents.flatMap((content: any) =>
 		content.saleItems.map((saleItem: any) => {
 			return {
@@ -72,7 +88,7 @@ export function transformData(data: any, offsetHours?: number) {
 				price: saleItem.item.price,
 				count: saleItem.number,
 				total: saleItem.item.price * saleItem.number,
-				createdAt: convertISOStringToCustomFormat(content.createdAt, offsetHours)
+				createdAt: content.createdAt
 			};
 		})
 	);
