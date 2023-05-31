@@ -1,12 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import type { HistoryItem } from '$lib/types/sale.js';
-	import { convertTimestampToOffsetDate, transformData } from '$lib/utils/chart.js';
+	import {
+		convertTimestampToOffsetDate,
+		getAbsoluteTime,
+		transformData
+	} from '$lib/utils/chart.js';
 
 	export let data;
 
 	let historyData: HistoryItem[] = [];
-	historyData = transformData(data.data, 9);
+	historyData = transformData(data.data);
 </script>
 
 <div class="container mx-auto min-h-[calc(100dvh-52px-72px)] p-4 md:px-0">
@@ -36,7 +40,7 @@
 						<td class="w-2/12 p-2">{item.price.toLocaleString()}円</td>
 						<td class="w-2/12 p-2">{item.count}</td>
 						<td class="w-2/12 p-2">{item.total.toLocaleString()}円</td>
-						<td class="w-2/12 p-2">{item.createdAt}</td>
+						<td class="w-2/12 p-2">{getAbsoluteTime(item.createdAt).toLocaleString()} </td>
 					</tr>
 				{/each}
 			</tbody>
