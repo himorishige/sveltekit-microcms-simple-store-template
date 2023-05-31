@@ -1,0 +1,90 @@
+{
+  "name": "template",
+  "plan": "Hobby",
+  "schema": [
+    {
+      "apiId": "API#f0cbac8a-400f-43c7-8819-5efe79b6f72d",
+      "apiName": "店舗設定",
+      "apiEndpoint": "config",
+      "apiType": "PAGE",
+      "apiFields": [
+        {
+          "idValue": "bulbkmOxXA",
+          "fieldId": "shopName",
+          "name": "店舗名",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "customFields": []
+    },
+    {
+      "apiId": "API#39d6961e-2377-444f-aa44-373fd0c5068e",
+      "apiName": "販売",
+      "apiEndpoint": "sale",
+      "apiType": "LIST",
+      "apiFields": [
+        {
+          "idValue": "fEUuDfTzdf",
+          "fieldId": "saleItems",
+          "name": "販売商品",
+          "kind": "repeater",
+          "customFieldCreatedAtList": ["2023-04-30T08:02:06.669Z"]
+        },
+        {
+          "idValue": "vsE1Bft6FV",
+          "fieldId": "totalPrice",
+          "name": "合計金額",
+          "kind": "number"
+        }
+      ],
+      "customFields": [
+        {
+          "apiId": "API#39d6961e-2377-444f-aa44-373fd0c5068e",
+          "createdAt": "2023-04-30T08:02:06.669Z",
+          "fieldId": "items",
+          "name": "販売商品",
+          "fields": [
+            {
+              "idValue": "HUdupLnYqn",
+              "fieldId": "item",
+              "name": "商品",
+              "kind": "relation",
+              "referenceKey": "API#744f4b92-6308-49c7-af58-460b0a857289"
+            },
+            {
+              "idValue": "g3nSP90i4F",
+              "fieldId": "number",
+              "name": "個数",
+              "kind": "number"
+            }
+          ],
+          "position": [["HUdupLnYqn"], ["g3nSP90i4F"]],
+          "updatedAt": "2023-04-30T08:02:06.669Z",
+          "viewerGroup": "Hrk"
+        }
+      ]
+    },
+    {
+      "apiId": "API#744f4b92-6308-49c7-af58-460b0a857289",
+      "apiName": "商品",
+      "apiEndpoint": "items",
+      "apiType": "LIST",
+      "apiFields": [
+        {
+          "idValue": "bXQ8loBbBb",
+          "fieldId": "title",
+          "name": "商品名",
+          "kind": "text"
+        },
+        {
+          "idValue": "M8KrPxs-9j",
+          "fieldId": "price",
+          "name": "金額",
+          "kind": "number"
+        }
+      ],
+      "customFields": []
+    }
+  ]
+}
