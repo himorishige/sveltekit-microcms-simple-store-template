@@ -2,9 +2,9 @@
 	"name": "my-dashboard-svelte",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "TZ=utc vite dev",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "TZ=utc vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@zerodevx/svelte-toast": "^0.9.3",
 		"apexcharts": "^3.40.0",
 		"microcms-js-sdk": "^2.4.0",
 		"microcms-utils": "^0.0.7"

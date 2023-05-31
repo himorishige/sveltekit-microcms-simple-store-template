@@ -8,7 +8,7 @@ import { createClient } from 'microcms-js-sdk';
 import type { ItemObject, SaleObject } from '$lib/types/sale';
 import { getFormattedTimeRange } from 'microcms-utils';
 
-export async function load({ params }) {
+export async function load({ params }: { params: { date?: string } }) {
 	const date = params.date || convertTimestampToOffsetDate(9, 'YYYY-MM-DD');
 
 	try {
@@ -64,7 +64,8 @@ export async function load({ params }) {
 			data,
 			prevData,
 			itemReport: itemReport,
-			prevItemReport: prevItemReport
+			prevItemReport: prevItemReport,
+			itemList: item.contents
 		};
 	} catch (error) {
 		console.error(error);
@@ -72,7 +73,8 @@ export async function load({ params }) {
 			data: [],
 			prevData: [],
 			itemReport: [],
-			prevItemReport: []
+			prevItemReport: [],
+			itemList: []
 		};
 	}
 }

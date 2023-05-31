@@ -1,38 +1,48 @@
-# create-svelte
+# シンプルな売上管理アプリケーション️
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+![image](https://github.com/himorishige/qwik-microcms-simple-store-template/assets/71954454/4d0bd4e9-2fcc-4792-b27e-f4f0b3304ffb)
 
-## Creating a project
+SvelteKitとmicroCMSを利用したシンプルな売上管理アプリケーションのテンプレートです。
+町内会や文化祭、フリーマーケットなど小さな店舗での利用を想定しています。
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [SvelteKit](https://kit.svelte.dev/)
+- [microCMS](https://microcms.io/)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## 必要なもの
 
-# create a new project in my-app
-npm create svelte@latest my-app
+利用にあたって下記の事前準備が必要となります。
+
+- microCMS APIキーの権限変更
+
+### microCMS APIキーの権限変更
+
+レジページにて計算、売上のデータをmicroCMSに登録するために販売APIに対してのPOST権限が必要となります。以下の画像と同じように権限を追加設定してください。
+
+![CleanShot 2023-05-17 at 16 14 15](https://github.com/himorishige/qwik-microcms-simple-store-template/assets/71954454/0cb8fb1c-443f-4911-9769-0fb42cb2aabb)
+
+## 環境変数の設定
+
+プロジェクトディレクトリ内に`.env`ファイルを作成の上下記必要事項を記述してください。
+
+```shell:.env
+MICROCMS_SERVICE_DOMAIN=microCMSのサービスドメイン名
+MICROCMS_API_KEY=microCMSのAPIキー
 ```
 
-## Developing
+## 開発
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### インストール
 
-```bash
+```shell
+npm install
+```
+
+### 開発サーバーの起動
+
+```shell
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## デプロイ
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Adaptersを利用することで各種環境へのデプロイが可能です。詳しくは[Adapters](https://kit.svelte.dev/docs/adapters)を参照ください。

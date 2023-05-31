@@ -18,7 +18,7 @@
 			<a href="/dashboard" class="hover:opacity-80" aria-label="Dashboard">
 				<Gauge />
 			</a>
-			<a href="/checkout" class="hover:opacity-80" aria-label="Checkout">
+			<a href="/dashboard/checkout" class="hover:opacity-80" aria-label="Checkout">
 				<Calculator />
 			</a>
 		</div>
