@@ -23,7 +23,7 @@
 		</div>
 		<div>
 			<a
-				href="/checkout"
+				href="/dashboard/checkout"
 				class="flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white py-10 shadow hover:bg-gray-100"
 			>
 				<div>
