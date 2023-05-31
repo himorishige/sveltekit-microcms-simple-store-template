@@ -45,4 +45,12 @@ npm run dev
 
 ## デプロイ
 
+最新版のSvelteKitでは以下の環境へのデプロイについては自動的に必要なアダプターをインストールして設定を行ってくれます。[Zero\-config deployments • Docs • SvelteKit](https://kit.svelte.dev/docs/adapter-auto)
+
+- @sveltejs/adapter-cloudflare for Cloudflare Pages
+- @sveltejs/adapter-netlify for Netlify
+- @sveltejs/adapter-vercel for Vercel
+- svelte-adapter-azure-swa for Azure Static Web Apps
+- svelte-kit-sst for AWS via SST
+
 Adaptersを利用することで各種環境へのデプロイが可能です。詳しくは[Adapters](https://kit.svelte.dev/docs/adapters)を参照ください。
