@@ -38,12 +38,6 @@
 				return async ({ update, result }) => {
 					await update();
 					loading = false;
-					toast.push('データの追加に失敗しました', {
-						theme: {
-							'--toastBackground': '#F87171',
-							'--toastProgressBackground': '#EF4444'
-						}
-					});
 					if (result.type === 'error') {
 						toast.push('データの追加に失敗しました', {
 							theme: {
