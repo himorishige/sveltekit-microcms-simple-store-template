@@ -13,6 +13,14 @@
 	historyData = transformData(data.data);
 </script>
 
+<svelte:head>
+	<title>History - {$page.params.date || convertTimestampToOffsetDate(9, 'YYYY-MM-DD')}</title>
+	<meta
+		name="description"
+		content="History - {$page.data.config.shopName || 'Simple Store Template'}"
+	/>
+</svelte:head>
+
 <div class="container mx-auto min-h-[calc(100dvh-52px-72px)] p-4 md:px-0">
 	<h1 class="mb-4 text-center text-xl font-bold md:text-left md:text-2xl">
 		{$page.params.date || convertTimestampToOffsetDate(9, 'YYYY-MM-DD')}{' '}

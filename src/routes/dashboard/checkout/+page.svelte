@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { enhance } from '$app/forms';
 	import Clock from '$lib/components/checkout/Clock.svelte';
 	import Loading from '$lib/components/icons/Loading.svelte';
@@ -28,6 +29,14 @@
 		};
 	}
 </script>
+
+<svelte:head>
+	<title>Store Checkout</title>
+	<meta
+		name="description"
+		content="Store Checkout - {$page.data.config.shopName || 'Simple Store Template'}"
+	/>
+</svelte:head>
 
 <div class="min-h-[calc(100dvh-52px-72px)] bg-white">
 	<div class="container mx-auto px-4 md:px-0">

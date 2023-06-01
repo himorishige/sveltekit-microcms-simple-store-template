@@ -22,6 +22,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Dashboard - {$page.params.date || convertTimestampToOffsetDate(9, 'YYYY-MM-DD')}</title>
+	<meta
+		name="description"
+		content="Dashboard - {$page.data.config.shopName || 'Simple Store Template'}"
+	/>
+</svelte:head>
+
 <div class="container mx-auto min-h-[calc(100dvh-52px-72px)] px-4 md:px-0">
 	<div class="mt-4 border-b-2 px-2 pb-4 md:flex md:items-center md:justify-between">
 		<h1 class="text-center text-xl font-bold md:text-left md:text-2xl">

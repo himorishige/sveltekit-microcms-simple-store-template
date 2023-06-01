@@ -1,11 +1,15 @@
 <script>
 	import Gauge from '$lib/components/icons/Gauge.svelte';
 	import Calculator from '$lib/components/icons/Calculator.svelte';
+	import { page } from '$app/stores';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>{$page.data.config.shopName || 'Simple Store Template'}</title>
+	<meta
+		name="description"
+		content={`Welcome to ${$page.data.config.shopName || 'Simple Store Template'}`}
+	/>
 </svelte:head>
 
 <div class="min-h-[calc(100dvh-52px-72px)]">
