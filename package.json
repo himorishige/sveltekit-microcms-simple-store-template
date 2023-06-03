@@ -39,6 +39,6 @@
 		"@zerodevx/svelte-toast": "^0.9.3",
 		"apexcharts": "^3.40.0",
 		"microcms-js-sdk": "^2.4.0",
-		"microcms-utils": "^0.0.7"
+		"microcms-utils": "^0.0.11"
 	}
 }

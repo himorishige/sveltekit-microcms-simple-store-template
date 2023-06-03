@@ -1,11 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import type { HistoryItem } from '$lib/types/sale.js';
-	import {
-		convertTimestampToOffsetDate,
-		getAbsoluteTime,
-		transformData
-	} from '$lib/utils/chart.js';
+	import { convertTimestampToOffsetDate, transformData } from '$lib/utils/chart.js';
+	import { getLocaleDateTime } from 'microcms-utils';
 
 	export let data;
 
@@ -48,7 +45,7 @@
 						<td class="w-2/12 p-2">{item.price.toLocaleString()}円</td>
 						<td class="w-2/12 p-2">{item.count}</td>
 						<td class="w-2/12 p-2">{item.total.toLocaleString()}円</td>
-						<td class="w-2/12 p-2">{getAbsoluteTime(item.createdAt).toLocaleString()} </td>
+						<td class="w-2/12 p-2">{getLocaleDateTime(item.createdAt)} </td>
 					</tr>
 				{/each}
 			</tbody>
