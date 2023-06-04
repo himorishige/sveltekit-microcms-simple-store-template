@@ -3,10 +3,21 @@
 ![image](https://github.com/himorishige/qwik-microcms-simple-store-template/assets/71954454/4d0bd4e9-2fcc-4792-b27e-f4f0b3304ffb)
 
 SvelteKitとmicroCMSを利用したシンプルな売上管理アプリケーションのテンプレートです。
-町内会や文化祭、フリーマーケットなど小さな店舗での利用を想定しています。
+町内会や文化祭、フリーマーケットなど小さな店舗での利用を想定したPWA対応のアプリケーションになっています。
 
 - [SvelteKit](https://kit.svelte.dev/)
 - [microCMS](https://microcms.io/)
+
+## 機能一覧
+
+- 簡易レジ機能
+- 当日・前日の販売データグラフの表示
+- 販売履歴
+- 販売データのCSVダウンロード
+
+## 動作環境
+
+- Node.js v16以上
 
 ## 必要なもの
 
