@@ -6,7 +6,7 @@ import {
 import { MICROCMS_API_KEY, MICROCMS_SERVICE_DOMAIN } from '$env/static/private';
 import { createClient } from 'microcms-js-sdk';
 import type { ItemObject, SaleObject } from '$lib/types/sale';
-import { getFormattedTimeRange } from 'microcms-utils';
+import { getFormattedFilterTimeRange } from 'microcms-utils';
 
 export async function load({ params }: { params: { date?: string } }) {
 	const date = params.date || convertTimestampToOffsetDate(9, 'YYYY-MM-DD');
@@ -21,7 +21,7 @@ export async function load({ params }: { params: { date?: string } }) {
 			endpoint: 'sale',
 			queries: {
 				limit: 9999,
-				filters: getFormattedTimeRange('createdAt', date, 0)
+				filters: getFormattedFilterTimeRange('createdAt', date, 0)
 			}
 		});
 
@@ -29,7 +29,7 @@ export async function load({ params }: { params: { date?: string } }) {
 			endpoint: 'sale',
 			queries: {
 				limit: 9999,
-				filters: getFormattedTimeRange('createdAt', getYesterdayFromISOString(date), 9)
+				filters: getFormattedFilterTimeRange('createdAt', getYesterdayFromISOString(date), 9)
 			}
 		});
 
