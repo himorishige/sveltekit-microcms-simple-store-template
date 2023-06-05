@@ -90,9 +90,9 @@
 		</div>
 		<div class="order-2 mt-8 md:order-none md:col-span-2 md:mt-0">
 			<div class="mb-2 flex items-center p-2">
-				<h3 class="text-xl font-bold">販売データ</h3>
+				<h2 class="text-xl font-bold">販売データ</h2>
 				<div class="ml-2">
-					<button type="button" on:click={downloadHandler}>
+					<button type="button" on:click={downloadHandler} aria-label="CSV Download">
 						<Download width={32} height={32} />
 					</button>
 				</div>
