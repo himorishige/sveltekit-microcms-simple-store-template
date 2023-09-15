@@ -20,7 +20,7 @@ export async function load({ params }: { params: { date?: string } }) {
 		const getData = client.getList<SaleObject>({
 			endpoint: 'sale',
 			queries: {
-				limit: 9999,
+				limit: 100,
 				filters: getFormattedFilterTimeRange('createdAt', date, 0)
 			}
 		});
@@ -28,7 +28,7 @@ export async function load({ params }: { params: { date?: string } }) {
 		const getPrevData = client.getList<SaleObject>({
 			endpoint: 'sale',
 			queries: {
-				limit: 9999,
+				limit: 100,
 				filters: getFormattedFilterTimeRange('createdAt', getYesterdayFromISOString(date), 9)
 			}
 		});
